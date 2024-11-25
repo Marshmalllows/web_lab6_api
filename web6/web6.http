@@ -1,0 +1,6 @@
+@web6_HostAddress = http://localhost:5167
+
+GET {{web6_HostAddress}}/egg/
+Accept: application/json
+
+###
