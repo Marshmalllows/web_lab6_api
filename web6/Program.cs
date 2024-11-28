@@ -2,12 +2,12 @@ var builder = WebApplication.CreateBuilder();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost",
+    options.AddPolicy("AllowGithubIO",
         policy =>
         {
-            policy.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+            policy.WithOrigins("https://marshmalllows.github.io").AllowAnyMethod().AllowAnyHeader();
         });
-});
+}); 
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
@@ -22,7 +22,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("AllowLocalhost");
+app.UseCors("AllowGithubIO");
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
