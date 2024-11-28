@@ -32,7 +32,7 @@ public class ToastController : ControllerBase
     [HttpGet("toasts")]
     public IActionResult GetObjects()
     {
-        const string filePath = "file.json";
+        const string filePath = "/tmp/file.json";
         if (!System.IO.File.Exists(filePath)) 
         {
             return Ok(new List<Toast>());
