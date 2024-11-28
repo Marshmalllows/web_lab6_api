@@ -10,7 +10,7 @@ public class ToastController : ControllerBase
     [HttpPost("save")]
     public IActionResult SaveObject([FromBody] Toast? newToast)
     {
-        const string filePath = "file.json";
+        const string filePath = "/tmp/file.json";
         if (newToast == null) return BadRequest(new { message = "Invalid data" });
         if (System.IO.File.Exists(filePath))
         {
